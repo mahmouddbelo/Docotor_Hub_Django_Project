@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h2 style="text-align: center; color: var(--primary-color);">Welcome Back</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- This will render your form fields automatically -->
+    <button type="submit">Submit</button>
+</form>
+
+<div class="footer">
+    <span><a href="{% url 'register' %}">Sign Up</a></span>
+    <span><a href="{% url 'password_reset' %}">Forgot Password?</a></span>
+</div>
+{% endblock %}
